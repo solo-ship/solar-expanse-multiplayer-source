@@ -7,8 +7,8 @@ their own copy of the game, kept in step by the host. Agencies nobody picks play
 **Status: public BETA (0.5.0-beta).** Expect bugs. It supports only one game build: Solar Expanse
 `0.26.10.9.13 BETA` (Steam branch `experimental`, build 25829824).
 
-- Download and player instructions: Nexus Mods page: `<NEXUS PAGE LINK>`
-- Bug reports and questions: `<NEXUS POSTS / BUGS LINK>`
+- Download and player instructions: Nexus Mods page: `<https://www.nexusmods.com/solarexpanse/mods/38>`
+- Bug reports and questions: `<https://www.nexusmods.com/solarexpanse/mods/38>`
 
 ## What this repository is
 
