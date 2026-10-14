@@ -1,0 +1,23 @@
+SOLAR EXPANSE MULTIPLAYER {VERSION}: LICENCES
+============================================
+
+Solar Expanse Multiplayer (SolarExpanseMultiplayer.dll and SolarExpanseMultiplayer.BepInEx.dll) is copyright held by the
+author solo-ship-it. It is free to use with Solar Expanse. It may not be redistributed, edited or re-uploaded without
+the author's permission.
+
+This download also contains third-party software, unmodified, under its own licence. The licence texts are in the
+"vanilla" folder next to each file (and are installed with it).
+
+Harmony 2.4.2 (0Harmony.dll)
+  Copyright (c) 2017 Andreas Pardeike. MIT licence (Harmony-LICENSE.txt).
+  Source: https://github.com/pardeike/Harmony
+  Included in the Doorstop (vanilla) install only. A BepInEx install uses BepInEx's own copy.
+
+Unity Doorstop 4.5.0 (winhttp.dll, 64-bit)
+  GNU Lesser General Public Licence 2.1 (UnityDoorstop-LICENSE.txt). The file is the unmodified official release.
+  Source code: https://github.com/NeighTools/UnityDoorstop (release v4.5.0).
+  Included in the Doorstop (vanilla) install only. A BepInEx install uses BepInEx's own Doorstop.
+
+BepInEx is not included. If you use it, it is under its own licence (LGPL-2.1): https://github.com/BepInEx/BepInEx
+
+No file of Solar Expanse itself is included or modified. Solar Expanse belongs to its makers.

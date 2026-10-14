@@ -1,0 +1,109 @@
+INSTALLING SOLAR EXPANSE MULTIPLAYER {VERSION}
+============================================
+
+Works whether or not you already use BepInEx. One zip, one step.
+
+FIRST: SWITCH THE GAME TO STEAM'S EXPERIMENTAL BRANCH
+-----------------------------------------------------
+This beta works ONLY on this game build: {GAMEBUILD}.
+In Steam: right-click Solar Expanse, Properties, Betas, and choose "experimental". Let Steam finish the update.
+The "open_beta" branch and the default branch are NOT supported: on them the mod will not start a session.
+Everyone who plays together needs the same branch.
+
+THE EASY WAY
+------------
+1. Extract the WHOLE zip to a folder of your own (for example your Downloads folder). Not into the game folder.
+2. Close Solar Expanse.
+3. Double-click install.cmd.
+   - It finds your Steam copy of the game (it asks if it cannot).
+   - It looks for BepInEx and installs the right kind for you:
+       BepInEx found     -> the mod goes into BepInEx\plugins\SolarExpanseMultiplayer\. The Doorstop files
+                            (winhttp.dll, doorstop_config.ini) are not touched, and neither are your other mods.
+       BepInEx not found -> winhttp.dll and doorstop_config.ini (Unity Doorstop) go beside the game, and the mod into
+                            SolarExpanseMultiplayer\.
+   - Before it changes anything it lists what it will do. Anything it would replace is backed up first. If
+     winhttp.dll or doorstop_config.ini belong to something else, it stops and tells you rather than replacing them.
+   - If you switch between the two kinds later (you add or remove BepInEx), run install.cmd again: it takes out the
+     other kind first, so the mod never loads twice.
+   - To update to a newer version of the mod, run the new version's install.cmd the same way.
+4. Start Solar Expanse from Steam as usual. The main menu now has a Multiplayer button.
+
+If Windows warns about the scripts ("Mark of the Web"): right-click the zip before extracting, choose Properties, tick
+Unblock, then OK. Then extract.
+
+TO REMOVE IT (UNINSTALL)
+------------------------
+Close the game, then double-click uninstall.cmd (from the same extracted folder). It removes the mod and puts back
+anything the install replaced. A file that something else changed since the install is left alone and listed.
+Kept unless you ask: the mod's own data and logs folders (its log, the host key, your ban list, the names you typed).
+To remove those too, run in PowerShell: powershell -ExecutionPolicy Bypass -File uninstall.ps1 -RemoveData
+Your saves are never removed. Multiplayer saves stay in the game's own save folder, in its "Multiplayer" folder.
+
+Or remove it by hand: close the game and delete the mod's files from the Solar Expanse game folder.
+  Without BepInEx: winhttp.dll, doorstop_config.ini and the SolarExpanseMultiplayer folder.
+  With BepInEx: the folder BepInEx\plugins\SolarExpanseMultiplayer.
+(The SolarExpanseMultiplayer folder also holds the mod's logs and data.)
+
+AFTER INSTALLING
+----------------
+Once install.cmd says INSTALLED, you can delete the downloaded zip and the extracted folder: the game does not need
+them. Keep them only if you want uninstall.cmd later; you can always download it again or remove the mod by hand.
+
+THE MANUAL WAY (and mod managers such as Vortex)
+------------------------------------------------
+Mod managers are not supported yet; install by hand or with install.cmd. Do not extract the zip over the game folder.
+Copy only what applies to you, from the extracted folder, into the Solar Expanse game folder (Steam: right-click the
+game, Manage, Browse local files):
+
+A) You do NOT have BepInEx:
+   Copy everything inside the "vanilla" folder into the game folder, so that you end up with
+       winhttp.dll
+       doorstop_config.ini
+       SolarExpanseMultiplayer\SolarExpanseMultiplayer.dll   (and 0Harmony.dll and the licence files)
+   If winhttp.dll or doorstop_config.ini already exist there and are not from this mod, stop: something else uses
+   them. Do not overwrite them.
+
+B) You DO have BepInEx:
+   Copy the "SolarExpanseMultiplayer" folder from inside the "bepinex" folder into
+       <game folder>\BepInEx\plugins\
+   so that you end up with BepInEx\plugins\SolarExpanseMultiplayer\SolarExpanseMultiplayer.dll and
+   SolarExpanseMultiplayer.BepInEx.dll. Never copy winhttp.dll or doorstop_config.ini from "vanilla": BepInEx has its
+   own, and replacing them breaks BepInEx.
+
+Never install both A and B. To remove a manual install, delete what you copied.
+
+BepInEx players: use BepInEx 5.4.23.5. An older 5.4.x can still run the mod but a join with a player who does not use
+BepInEx is refused (the file comparison does not match). Update BepInEx and try again.
+
+HOSTING AND JOINING
+-------------------
+Everyone needs the same mod version ({VERSION}), the same game build and the same other mods.
+- To host: on the main menu, press Multiplayer, then Host a game. Pick a new game, one of your saves, or a
+  Multiplayer save, then Next. The lobby opens.
+- In the lobby: press Invite friends to invite Steam friends (any player in the lobby can invite). "Who can join"
+  sets who may come in: Friends (your Steam friends can also use Join Game in the Steam friends list), Invite only,
+  or Code only. Every player picks an agency and presses Ready; the host presses Start game. Agencies nobody picks
+  are AI rivals. You may start alone; friends can join later.
+- Players who are not your Steam friends: send them the lobby's Steam join code privately. Players on your own home
+  network can use the LAN code instead.
+- To join: accept the Steam invitation, or choose Join Game in the Steam friends list. With a code: on the main menu,
+  press Multiplayer, then Join a game, and paste the code.
+- The host removes or bans a player from the PLAYERS screen on the pause (Esc) menu.
+- Windows may ask once whether the game may use the network. Allow Private networks only, never Public.
+- Start the game from Steam (not from its .exe) so that Steam invites and the overlay work.
+
+KNOWN LIMITS
+------------
+- Only the experimental branch build above. After a game update, the mod waits for its own update.
+- Everyone needs the same mods: a player with different code mods (or BepInEx plugins) is refused with a list of what
+  differs.
+- After you leave a session, restart the game before you host or join again.
+- Co-op (several players on one agency) is not in this beta. Some buttons are greyed out in a session.
+
+IF THE MULTIPLAYER BUTTON IS MISSING
+------------------------------------
+The mod did not load. Check that the game is on the experimental branch, that you ran install.cmd (or copied the files
+as above), and that only one of the two kinds is installed. The mod's log is in its folder
+(SolarExpanseMultiplayer\logs\ or BepInEx\plugins\SolarExpanseMultiplayer\logs\): attach it when you report a problem.
+The log names other players by number, never by name, and says only what kind of network you used (home network,
+Tailscale, Steam), never an address. Send only the logs folder, not the data folder (it holds your keys and ban list).

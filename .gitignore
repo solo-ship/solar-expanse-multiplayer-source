@@ -1,0 +1,14 @@
+bin/
+obj/
+*.user
+.vs/
+# never commit game code or game files: the game's DLLs and the third-party reference DLLs live in lib/
+decompiled/
+Assembly-CSharp*.dll
+lib/
+
+# generated at build time by tools\build.ps1 (the shim's SHA-256 embedded in the main DLL)
+src/**/ShimPin.g.cs
+
+# the release zip (tools\release.ps1): a build product, never committed
+dist/release/
